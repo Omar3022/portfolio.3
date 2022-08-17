@@ -1,0 +1,226 @@
+#go-top {
+  position: fixed;
+  bottom: 2%;
+  right: 2%;
+  padding: 5px;
+  background-color: $black;
+  border-radius: 5px;
+  border: none;
+  transition: .5s ease;
+
+  .bom {
+    height: 20px;
+    width: 20px;
+    border: 5px solid;
+    border-left-color: transparent;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    background-color: rgb(255, 238, 0);
+    transition: .5s ease;
+
+  }
+}
+
+#home {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#navigation {
+  transition: 0.5s ease;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100000;
+  background-color: $black;
+  height: 10vh;
+  width: 90%;
+  margin: 0 auto;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 15px 0 25px rgba(0, 0, 0, 0.07);
+  img {
+    margin-left: 60px;
+    cursor: pointer;
+  }
+  #list {
+    display: flex;
+    margin-right: 80px;
+
+    li {
+      margin: 0 20px;
+
+      a {
+        position: relative;
+        transition: 0.5s ease;
+
+        color: $mainColor;
+        font: {
+          size: 16px;
+          weight: 600;
+          family: "Arima";
+        }
+      }
+      a:hover,
+      a.active {
+        color: $secondColor;
+      }
+    }
+    .active::after {
+      content: "";
+      height: 2px;
+      width: 40%;
+      position: absolute;
+      top: 20px;
+      left: 0;
+      background-color: $mainColor;
+    }
+    .active::after,
+    a:hover::after {
+      content: "";
+      height: 2px;
+      width: 40%;
+      position: absolute;
+      top: 20px;
+      left: 0;
+      background-color: $secondColor;
+    }
+  }
+}
+
+#hero {
+  background-image: url("main.png");
+  background-repeat: no-repeat;
+  background-size: 40%;
+  background-position: top 80% right 20%;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 60px;
+  position: relative;
+
+  h1 {
+    color: $secondColor;
+    font-size: 60px;
+
+    font-family: "Arima";
+  }
+  #info {
+    display: flex;
+    width: 250px;
+    justify-content: space-evenly;
+    height: 100px;
+    p {
+      margin-right: 5px;
+      font: {
+        size: 30px;
+        family: "Arima";
+        weight: 600;
+      }
+      padding: 20px 0;
+
+      color: $black;
+    }
+  }
+
+  #header_p {
+    margin-top: 40px;
+    font: {
+      size: 25px;
+      family: "arima";
+      weight: 900;
+    }
+    span {
+      color: $secondColor;
+      font-weight: 900;
+      text-transform: capitalize;
+      font-size: 30px;
+    }
+  }
+
+  .iam {
+    position: relative;
+    top: 43px;
+    font: {
+      size: 25px;
+      family: "arima";
+      weight: 900;
+    }
+  }
+
+  #slid {
+    margin-left: 120px;
+    span {
+      display: none;
+      color: $mainColor;
+      font: {
+        size: 40px;
+        weight: 900;
+        family: "arima";
+      }
+    }
+    .show {
+      display: block;
+      animation: showAnimation 0.8s ease;
+      transform-origin: left;
+    }
+    .show-out {
+      animation: showAnimationOut 0.8s ease;
+    }
+
+    @keyframes showAnimation {
+      0% {
+        transform: scale(0);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+    @keyframes showAnimationOut {
+      0% {
+        transform: translateY(0);
+      }
+      100% {
+        transform: translateY(-100%);
+      }
+    }
+  }
+
+  .imgs {
+    position: absolute;
+    right: 10%;
+    height: 90vh;
+    width: 40%;
+    img {
+      width: 50px;
+      position: absolute;
+      color: $secondColor;
+    }
+    .tag {
+      top: 20%;
+    }
+    .html {
+      top: 15%;
+      left: 30%;
+    }
+    .css {
+      top: 63%;
+      left: 42%;
+    }
+    .js {
+      top: 39%;
+      left: 2%;
+    }
+    .sass {
+      right: 10%;
+      top: 50%;
+    }
+  }
+}
